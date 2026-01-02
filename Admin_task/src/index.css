@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --white: #FFFFFF;
+  --primary: #F47D34;
+  --light-primary: #F2F1ED;
+  --input-bg: #F7F7F7;
+  --stroke: #D4D4D4;
+  --sub-heading: #818181;
+  --title: #1A1A1A;
+  --error: #FF5959;
+  
+  --background: var(--white);
+  --foreground: var(--title);
+  --font-poppins: 'Poppins';
+}
+
+body {
+  font-family: var(--font-poppins), sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Color Classes */
+.text-primary { color: var(--primary); }
+.text-sub-heading { color: var(--sub-heading); }
+.text-title { color: var(--title); }
+.text-error { color: var(--error); }
+
+.bg-primary { background-color: var(--primary); }
+.bg-light-primary { background-color: var(--light-primary); }
+.bg-input-bg { background-color: var(--input-bg); }
+
+.border-primary { border-color: var(--primary); }
+.border-stroke { border-color: var(--stroke); }
+
+/* Custom Container */
+.max-container {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .max-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Custom Font Sizes (Responsive) */
+.font-56 { font-size: clamp(36px, 6vw, 56px); }
+.font-48 { font-size: clamp(34px, 5.5vw, 48px); }
+.font-42 { font-size: clamp(32px, 5vw, 42px); }
+.font-36 { font-size: clamp(28px, 4.5vw, 36px); }
+.font-34 { font-size: clamp(26px, 4.2vw, 34px); }
+.font-32 { font-size: clamp(24px, 4vw, 32px); }
+.font-29 { font-size: clamp(22px, 3.6vw, 29px); }
+.font-24 { font-size: clamp(20px, 3vw, 24px); }
+.font-20 { font-size: clamp(18px, 2.5vw, 20px); }
+.font-18 { font-size: clamp(16px, 2vw, 18px); }
+.font-16 { font-size: clamp(14px, 1.8vw, 16px); }
+.font-14 { font-size: clamp(12px, 1.5vw, 14px); }
+.font-12 { font-size: clamp(11px, 1.2vw, 12px); }
+
+/* Font Weight Classes */
+.regular { font-weight: 400; }
+.medium { font-weight: 500; }
+.semibold { font-weight: 600; }
+.bold { font-weight: 700; }
+.italic { font-style: italic; }
+
+/* Custom Animations */
+@keyframes border-spin {
+  to { --border-angle: 1turn; }
+}
+
+.animate-border-spin {
+  animation: border-spin 3s linear infinite;
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+
+/* Custom Backgrounds */
+.bg-card-gradient {
+  background: linear-gradient(53.1deg, #F7F8F3 0.18%, #FFF3DF 100%);
+}
+
+.bg-timer-gradient {
+  background: linear-gradient(180deg, rgba(244, 125, 52, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
+}
+
+/* .course-circle {
+  border: 13px solid theme('colors.primary');
+} */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbars */
+.overflow-x-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.overflow-x-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
