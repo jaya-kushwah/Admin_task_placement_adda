@@ -1,70 +1,103 @@
 import React, { useState } from 'react';
-import { Upload, ChevronRight } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom';
+import { ChevronDown, Link as LinkIcon } from 'lucide-react';
+import { useNavigate, Link } from 'react-router-dom';
 
 const AddStudyMaterial = () => {
   const navigate = useNavigate();
-  const [courseStatus, setCourseStatus] = useState(true);
+  const [formData, setFormData] = useState({
+    title: 'HTML Basics Study Material',
+    course: 'Full Stack Development',
+    content: ''
+  });
 
   return (
-    <div className="w-full space-y-8 pb-10 px-2 transition-colors duration-300">
-      <div className="flex items-center gap-2 text-sm text-white mb-4">
-        <span>Academics</span>
-        <span className="text-white text-sm">»</span>
-        <Link
-          to="/academics/study-materials"
-          className="text-white transition-colors cursor-pointer">
-          Subject
-        </Link>
-        <span className="text-white text-sm">»</span>
-        <span className="text-white font-medium">Add Subject</span>
-      </div>
+    <div className="w-full text-gray-300 font-sans min-h-screen pb-10">
 
-      <h1 className="text-2xl font-bold mb-8">Add Subject</h1>
+      <h1 className="text-xl font-bold text-white mb-4">Add Study Material</h1>
 
-      <div className="max-w-4xl space-y-8">
-        <div className="w-64">
-          <div className="border-2 border-dashed border-gray-800 rounded-2xl p-8 flex flex-col items-center justify-center bg-[#111] hover:border-orange-500/50 transition-colors cursor-pointer group">
-            <button className="flex items-center gap-2 bg-[#222] border border-orange-500/30 text-[#F37021] px-4 py-1.5 rounded-full text-xs font-semibold mb-4 group-hover:bg-[#F37021] group-hover:text-white transition-all">
-              Upload File <Upload size={14} />
+      {/* 2. Main Content Grid - Split Layout (Image_9d7337 matching) */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+        
+        {/* Left Side: Form Inputs */}
+        <div className="space-y-6">
+          {/* Title Select */}
+          <div className="space-y-2">
+            <label className="text-[13px] font-medium text-[#d1d3d4]">Title</label>
+            <div className="relative">
+              <select 
+                value={formData.title}
+                onChange={(e) => setFormData({...formData, title: e.target.value})}
+                className="w-full bg-[#0D0D0D] border border-gray-800 rounded-lg p-3 text-sm text-white outline-none appearance-none cursor-pointer hover:border-gray-600 focus:border-orange-500 transition-all"
+              >
+                <option>Select Title</option>
+                <option>React Advanced Patterns</option>
+                <option>Node.js API Design</option>
+              </select>
+              <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" size={18} />
+            </div>
+          </div>
+
+          {/* Subject/Course Select */}
+          <div className="space-y-2">
+            <label className="text-[13px] font-medium text-[#d1d3d4]">Subject Select</label>
+            <div className="relative">
+              <select 
+                value={formData.course}
+                onChange={(e) => setFormData({...formData, course: e.target.value})}
+                className="w-full bg-[#0D0D0D] border border-gray-800 rounded-lg p-3 text-sm text-white outline-none appearance-none cursor-pointer hover:border-gray-600 focus:border-orange-500 transition-all"
+              >
+                <option>Select Subject</option>
+                <option>Full Stack Development</option>
+                <option>UI/UX Design</option>
+                <option>Data Science</option>
+              </select>
+              <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" size={18} />
+            </div>
+          </div>
+
+          {/* Action Buttons */}
+          <div className="flex gap-4 pt-4">
+            <button
+              onClick={() => navigate(-1)}
+              className="px-8 py-2.5 bg-[#1A1A1A] text-white rounded-lg text-sm font-medium hover:bg-gray-800 transition-all border border-white/5"
+            >
+              Cancel
             </button>
-            <p className="text-sm font-bold text-gray-300 mb-1">Upload Subject Logo</p>
-            <p className="text-[10px] text-gray-500">Supported formats: JPG, PNG</p>
+            <button
+              className="px-10 py-2.5 bg-[#F37021] text-white rounded-lg text-sm font-bold hover:bg-orange-700 transition-all shadow-lg shadow-orange-600/20"
+            >
+              Save
+            </button>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
-          <div className="flex flex-col gap-2">
-            <label className="text-sm font-medium text-gray-400">Course Select</label>
-            <input
-              type="text"
-              placeholder="Full Stack Development"
-              className="bg-transparent border border-gray-800 rounded-xl px-4 py-3 outline-none hover:border-orange-500 transition-all text-gray-200"
-            />
+        {/* Right Side: Content Area / Preview Area (Image_9d7337 matching) */}
+        <div className="bg-[#0D0D0D] border border-gray-800 rounded-xl p-6">
+          <div className="flex justify-between items-center mb-6 border-b border-gray-800 pb-4">
+             <h2 className="text-gray-400 text-sm font-medium">Write Study Material Content Here</h2>
+             <LinkIcon size={16} className="text-gray-500" />
           </div>
+          
+          <div className="prose prose-invert max-w-none text-gray-400 text-sm leading-relaxed space-y-6">
+            <h3 className="text-white text-lg font-semibold">Object-Oriented Programming Concepts</h3>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>All HTML elements can have attributes.</li>
+              <li>Attributes provide additional information about elements.</li>
+              <li>Attributes are always specified in the start tag.</li>
+            </ul>
 
-          <div className="flex flex-col gap-2">
-            <label className="text-sm font-medium text-gray-400">Subject Name</label>
-            <input
-              type="text"
-              placeholder="Brief overview of the course"
-              className="bg-transparent border border-gray-800 rounded-xl px-4 py-3 outline-none hover:border-orange-500 transition-all text-gray-200"
-            />
+            <h3 className="text-white text-md font-semibold mt-4">The href Attribute</h3>
+            <p>The &lt;a&gt; tag defines a hyperlink. The href attribute specifies the URL of the page the link goes to.</p>
+
+            <h3 className="text-white text-md font-semibold mt-4">The src Attribute</h3>
+            <p>Absolute URL - Links to an external image that is hosted on another website. Example: src="https://www.w3schools.com/images/img_girl.jpg".</p>
+            
+            <p className="text-orange-400/80 italic text-[12px]">
+              Notes: External images might be under copyright. If you do not get permission to use it, you may be in violation of copyright laws.
+            </p>
           </div>
-
-          </div>
-
-        <div className="flex items-center gap-4 pt-4">
-          <button
-            onClick={() => navigate(-1)}
-            className="px-6 py-2 rounded-xl bg-[#222] text-gray-300 border border-gray-600 font-medium transition-all"
-          >
-            Cancel
-          </button>
-          <button className="px-4 py-2 rounded-lg bg-[#f97316] hover:bg-orange-600 text-white font-medium shadow-lg shadow-orange-500/20 transition-all active:scale-95">
-            Save Course
-          </button>
         </div>
+
       </div>
     </div>
   );

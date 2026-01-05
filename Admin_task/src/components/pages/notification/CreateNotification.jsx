@@ -20,43 +20,43 @@ const CreateNotification = () => {
             <div className="flex items-center gap-2 text-sm mb-4">
                 <Link
                     to="/notifications"
-                    className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+                    className="text-white hover:text-white transition-colors cursor-pointer"
                 >
                     Notification
                 </Link>
 
-                <span className="text-gray-600 text-lg">»</span>
+                <span className="text-white text-lg">»</span>
 
                 <span className="text-white font-medium">
                     Create Notification
                 </span>
             </div>
 
-            <h1 className="text-xl font-bold text-white mb-8">Create Notification</h1>
+            <h1 className="text-xl font-bold text-white mb-6">Create Notification</h1>
 
             <div className="space-y-6">
                 {/* Title Input */}
                 <div>
-                    <label className="block text-xs mb-2 text-gray-400">Title</label>
+                    <label className="block text-sm mb-2 text-[#d1d3d4]">Title</label>
                     <input
                         type="text"
-                        value={formData.title}
-                        className="w-full bg-[#111] border border-orange-500/30 rounded-lg p-3 text-sm outline-none focus:border-orange-500 transition-all"
+                        // value={formData.title}
+                        className="w-full bg-[#111] border border-gray-800 rounded-lg p-3 text-sm outline-none focus:border-orange-500 transition-all"
                     />
                 </div>
 
                 {/* Message Body */}
                 <div>
-                    <label className="block text-xs mb-2 text-gray-400">Message Body</label>
+                    <label className="block text-xs mb-2 text-[#d1d3d4]">Message Body</label>
                     <textarea
                         rows="4"
-                        value={formData.message}
-                        className="w-full bg-[#111] border border-gray-800 rounded-lg p-3 text-sm outline-none focus:border-gray-600 transition-all resize-none"
+                        // value={formData.message}
+                        className="w-full bg-[#111] border border-gray-800 rounded-lg p-3 text-sm outline-none focus:border-orange-500 transition-all resize-none"
                     />
                 </div>
 
                 <div>
-                    <label className="block text-xs mb-4 text-gray-400">Notification Type</label>
+                    <label className="block text-xs mb-4 text-[#d1d3d4]">Notification Type</label>
                     <div className="space-y-3">
                         {notificationTypes.map((type) => (
                             <label key={type} className="flex items-center gap-3 cursor-pointer group">
@@ -70,7 +70,7 @@ const CreateNotification = () => {
                                     checked={formData.type === type}
                                     onChange={() => setFormData({ ...formData, type })}
                                 />
-                                <span className={`text-sm ${formData.type === type ? 'text-white' : 'text-gray-500'}`}>{type}</span>
+                                <span className="text-sm">{type}</span>
                             </label>
                         ))}
                     </div>
@@ -78,14 +78,14 @@ const CreateNotification = () => {
 
                 {/* Channel Selection */}
                 <div className="pt-4">
-                    <label className="block text-xs mb-4 text-gray-400">Channel</label>
+                    <label className="block text-xs mb-4 text-[#d1d3d4]">Channel</label>
                     <div className="flex flex-col gap-3">
                         {["In-App", "Email (Optional)"].map((ch) => (
                             <label key={ch} className="flex items-center gap-3 cursor-pointer">
                                 <div className={`w-4 h-4 rounded-full border flex items-center justify-center ${formData.channel === ch ? 'border-orange-500' : 'border-gray-600'}`}>
                                     {formData.channel === ch && <div className="w-2 h-2 rounded-full bg-orange-500" />}
                                 </div>
-                                <span className="text-sm text-gray-400">{ch}</span>
+                                <span className="text-sm">{ch}</span>
                             </label>
                         ))}
                     </div>
@@ -95,11 +95,15 @@ const CreateNotification = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
                     <div>
                         <label className="block text-xs mb-2 text-gray-400">Date</label>
-                        <input type="text" value={formData.date} className="w-full bg-[#111] border border-gray-800 rounded-lg p-3 text-sm" />
+                        <input type="text" 
+                        // value={formData.date}
+                         className="w-full bg-[#111] border border-gray-800 rounded-lg p-3 text-sm focus:border-orange-500 " />
                     </div>
                     <div>
                         <label className="block text-xs mb-2 text-gray-400">Time</label>
-                        <input type="text" value={formData.time} className="w-full bg-[#111] border border-gray-800 rounded-lg p-3 text-sm" />
+                        <input type="text" 
+                        // value={formData.time}
+                         className="w-full bg-[#111] border border-gray-800 rounded-lg p-3 text-sm focus:border-orange-500" />
                     </div>
                 </div>
 

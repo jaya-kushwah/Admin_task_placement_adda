@@ -35,7 +35,7 @@ const AddStudent = () => {
         {/* Row 1: Name & Mobile */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <label className="text-xs text-gray-400 font-medium">Full Name</label>
+            <label className="text-xs text-[#d1d3d4] font-medium">Full Name</label>
             <input 
               name="fullName"
               placeholder='Enter yuor fullname'
@@ -45,7 +45,7 @@ const AddStudent = () => {
             />
           </div>
           <div className="space-y-2">
-            <label className="text-xs text-gray-400 font-medium">Mobile Number</label>
+            <label className="text-xs text-[#d1d3d4] font-medium">Mobile Number</label>
             <input 
               name="mobileNumber"
               placeholder='Enter your mobile number'
@@ -59,7 +59,7 @@ const AddStudent = () => {
         {/* Row 2: Email & WhatsApp */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <label className="text-xs text-gray-400 font-medium">Email Address</label>
+            <label className="text-xs text-[#d1d3d4] font-medium">Email Address</label>
             <input 
               name="email"
               placeholder='enter your email'
@@ -69,7 +69,7 @@ const AddStudent = () => {
             />
           </div>
           <div className="space-y-2">
-            <label className="text-xs text-gray-400 font-medium">WhatsApp Number</label>
+            <label className="text-xs text-[#d1d3d4] font-medium">WhatsApp Number</label>
             <input 
               name="whatsappNumber"
               placeholder='Enter your whatsapp number'
@@ -83,7 +83,7 @@ const AddStudent = () => {
         {/* Row 3: Qualification & Course Dropdown */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <label className="text-xs text-gray-400 font-medium">Qualification</label>
+            <label className="text-xs text-[#d1d3d4] font-medium">Qualification</label>
             <input 
               name="qualification"
               placeholder='Enter your quilification'
@@ -93,7 +93,7 @@ const AddStudent = () => {
             />
           </div>
           <div className="space-y-2">
-            <label className="text-xs text-gray-400 font-medium">Select Course</label>
+            <label className="text-xs text-[#d1d3d4] font-medium">Select Course</label>
             <div className="relative">
               <select 
                 name="course"

@@ -90,16 +90,14 @@ function App() {
 <Route path="/academics" element={<Academics />}>
   {/* Index route: Jab koi sirf /academics par ho */}
   <Route index element={<Course />} /> 
-
   {/* Nested Routes: Ye Academics ke andar hi rahenge */}
   <Route path="add_course" element={<AddCourse />} /> 
   <Route path="add_subject" element={<AddSubject />} />
   <Route path="add_study_material" element={<AddStudyMaterial></AddStudyMaterial>} />
   
   {/* Baki tab components yahan add karein */}
-  <Route path="subject" element={<Subject />} />
-  <Route path="course" element={<Course />} />
-
+                  <Route path="course" element={<Course />} />
+                <Route path="subject" element={<Subject />} />
                 <Route path="study-materials" element={<StudyMaterial />} />
                 <Route path="recorded-lectures" element={<RecordLecture />} />
                 <Route path="class-notes" element={<ClassNotes />} />

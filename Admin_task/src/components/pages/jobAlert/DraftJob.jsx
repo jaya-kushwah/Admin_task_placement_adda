@@ -60,7 +60,7 @@ const DraftJob = () => {
                     <Link to={'/addJob'}>
                         <button className="flex items-center gap-2 bg-[#f97316] hover:bg-orange-600 text-white px-5 py-2 rounded-lg font-bold transition-all text-sm shadow-lg shadow-orange-500/20 active:scale-95">
                             <Plus size={18} />
-                            <span className="whitespace-nowrap">Add Student</span>
+                            <span className="whitespace-nowrap">Add New Job</span>
                         </button>
                     </Link>
                 </div>

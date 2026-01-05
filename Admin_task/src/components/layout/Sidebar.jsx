@@ -9,12 +9,12 @@ import { useTheme } from '../context/ThemeContext';
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   const { theme } = useTheme();
-  const location = useLocation(); // Current path check karne ke liye
+  const location = useLocation();
 
   const menuItems = [
     { name: "Dashboard", icon: <LayoutDashboard size={20} />, path: "/" },
     { name: "Students", icon: <Users size={20} />, path: "/student" },
-    { name: "Academics", icon: <GraduationCap size={20} />, path: "/academics" },
+    { name: "Academics", icon: <GraduationCap size={20} />, path: "/academics/course" },
     { name: "Engagement", icon: <MessageSquare size={20} />, path: "/engagement" },
     { name: "Job Alerts", icon: <Briefcase size={20} />, path: "/jobs" },
     { name: "Certificates", icon: <BadgeCheck size={20} />, path: "/certificates" },
@@ -45,21 +45,29 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
         <nav className="space-y-2 flex-1">
           {menuItems.map((item, index) => {
-            // LOGIC: Check karein ki kya path match kar raha hai ya start ho raha hai
-            // Special cases handle kiye hain jaise Notification ke liye create_notify
-            const isNotificationActive = item.name === "Notification" &&
-              (location.pathname === "/notifications" || location.pathname === "/create_notify");
+            
+            const isDashboard = item.path === "/";
+            
+            // 2. Logic: Kya current URL is item ke path se start ho raha hai?
+            // startsWith use karne se /academics/add_course automatically Academics ko active rakhega.
+            let isActive = isDashboard 
+              ? location.pathname === "/" 
+              : location.pathname.startsWith(item.path);
 
-            const isStudentActive = item.name === "Students" &&
-              (location.pathname === "/student" || location.pathname === "/addStudent");
-
-            const isAcademicActive = item.name === "Academics" &&
-              (location.pathname === "/academics" || location.pathname === "/course" || location.pathname === "/subject" || location.pathname === "/add_course" || location.pathname === "/add_subject");
-
-            const isJobActive = item.name === "Job Alerts" &&
-              (location.pathname === "/Jobs" || location.pathname === "/addJob");
-
-            const isActive = location.pathname === item.path || isNotificationActive || isStudentActive || isAcademicActive || isJobActive;
+            // 3. Special cases: Agar aapka URL structure nested nahi hai (jaise /addStudent vs /student)
+            if (item.name === "Notification" && location.pathname.startsWith("/create_notify")) isActive = true;
+            if (item.name === "Students" && location.pathname.startsWith("/addStudent")) isActive = true;
+            if (item.name === "Job Alerts" && location.pathname.startsWith("/addJob")) isActive = true;
+            
+            // Academics ke liye special check (Just in case routes nested na ho)
+            if (item.name === "Academics" && (
+              location.pathname.startsWith("/academics") || 
+              location.pathname.startsWith("/course") || 
+              location.pathname.startsWith("/subject") ||
+              location.pathname.startsWith("/add_") // covers add_course, add_subject, etc.
+            )) {
+              isActive = true;
+            }
 
             return (
               <NavLink

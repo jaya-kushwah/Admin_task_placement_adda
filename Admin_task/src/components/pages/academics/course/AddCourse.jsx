@@ -8,24 +8,13 @@ const AddCourse = () => {
 
   return (
     <div className="w-full space-y-8 pb-10 px-2 transition-colors duration-300">
-      <div className="flex items-center gap-2 text-sm text-white mb-4">
-        <span>Academics</span>
-        <span className="text-white text-sm">»</span>
-        <Link
-          to="/academics/course"
-          className="text-white transition-colors cursor-pointer">
-          Courses
-        </Link>
-        <span className="text-white text-sm">»</span>
-        <span className="text-white font-medium">Add Course</span>
-      </div>
 
       <h1 className="text-2xl font-bold mb-8">Add Course</h1>
 
       <div className="max-w-4xl space-y-8">
         <div className="w-64">
           <div className="border-2 border-dashed border-gray-800 rounded-2xl p-8 flex flex-col items-center justify-center bg-[#111] hover:border-orange-500/50 transition-colors cursor-pointer group">
-            <button className="flex items-center gap-2 bg-[#222] border border-orange-500/30 text-[#F37021] px-4 py-1.5 rounded-full text-xs font-semibold mb-4 group-hover:bg-[#F37021] group-hover:text-white transition-all">
+            <button className="flex items-center gap-2 bg-[#222] border border-orange-500/30 text-[#F37021] px-4 py-1.5 rounded-full text-xs font-medium mb-4 group-hover:bg-[#F37021] group-hover:text-white transition-all">
               Upload File <Upload size={14} />
             </button>
             <p className="text-sm font-bold text-gray-300 mb-1">Upload Course Logo</p>
@@ -35,7 +24,7 @@ const AddCourse = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
           <div className="flex flex-col gap-2">
-            <label className="text-sm font-medium text-gray-400">Course Name</label>
+            <label className="text-sm font-medium text-[#d1d3d4]">Course Name</label>
             <input
               type="text"
               placeholder="Full Stack Development"
@@ -44,7 +33,7 @@ const AddCourse = () => {
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-sm font-medium text-gray-400">Course Description</label>
+            <label className="text-sm font-medium text-[#d1d3d4]">Course Description</label>
             <input
               type="text"
               placeholder="Brief overview of the course"
@@ -53,7 +42,7 @@ const AddCourse = () => {
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-sm font-medium text-gray-400">Duration</label>
+            <label className="text-sm font-medium text-[#d1d3d4]">Duration</label>
             <input
               type="text"
               placeholder="6 Months"
@@ -62,7 +51,7 @@ const AddCourse = () => {
           </div>
 
           <div className="flex flex-col gap-3">
-            <label className="text-sm font-medium text-gray-400">Status</label>
+            <label className="text-sm font-medium text-[#d1d3d4]">Status</label>
             <div
               onClick={() => setCourseStatus(!courseStatus)}
               className={`w-12 h-6 rounded-full p-1 cursor-pointer transition-all flex items-center ${courseStatus ? 'bg-[#F37021]' : 'bg-gray-800'}`}

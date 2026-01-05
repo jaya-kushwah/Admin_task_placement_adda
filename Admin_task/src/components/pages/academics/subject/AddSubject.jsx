@@ -8,17 +8,6 @@ const AddSubject = () => {
 
   return (
     <div className="w-full space-y-8 pb-10 px-2 transition-colors duration-300">
-      <div className="flex items-center gap-2 text-sm text-white mb-4">
-        <span>Academics</span>
-        <span className="text-white text-sm">»</span>
-        <Link
-          to="/academics/subject"
-          className="text-white transition-colors cursor-pointer">
-          Subject
-        </Link>
-        <span className="text-white text-sm">»</span>
-        <span className="text-white font-medium">Add Subject</span>
-      </div>
 
       <h1 className="text-2xl font-bold mb-8">Add Subject</h1>
 
@@ -35,7 +24,7 @@ const AddSubject = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
           <div className="flex flex-col gap-2">
-            <label className="text-sm font-medium text-gray-400">Course Select</label>
+            <label className="text-sm font-medium text-[#e0e1e2]">Course Select</label>
             <input
               type="text"
               placeholder="Full Stack Development"
@@ -44,7 +33,7 @@ const AddSubject = () => {
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-sm font-medium text-gray-400">Subject Name</label>
+            <label className="text-sm font-medium text-[#e0e1e2]">Subject Name</label>
             <input
               type="text"
               placeholder="Brief overview of the course"
