@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Search, Plus, ChevronDown, Eye, Edit2, Trash2 } from 'lucide-react';
 import DeleteModel from '../../../reusable/DeleteModel';
+import { Link } from 'react-router-dom';
 
 const StudyMaterial = () => {
   // Modal states
@@ -61,10 +62,12 @@ const StudyMaterial = () => {
             Subject <ChevronDown size={14} className="text-gray-500" />
           </button>
 
+<Link to="/academics/add_study_material">
           <button className="flex items-center gap-1 bg-[#f97316] hover:bg-orange-600 text-white px-3 py-1.5 rounded-lg font-medium shadow-lg shadow-orange-500/10 active:scale-95 transition-all truncate">
             <Plus size={18} />
             Add New Study Materials
           </button>
+          </Link>
         </div>
       </div>
 

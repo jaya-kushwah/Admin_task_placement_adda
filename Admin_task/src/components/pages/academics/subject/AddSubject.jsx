@@ -12,15 +12,15 @@ const AddSubject = () => {
         <span>Academics</span>
         <span className="text-white text-sm">»</span>
         <Link
-          to="/academics"
+          to="/academics/subject"
           className="text-white transition-colors cursor-pointer">
           Subject
         </Link>
         <span className="text-white text-sm">»</span>
-        <span className="text-white font-medium">Add Course</span>
+        <span className="text-white font-medium">Add Subject</span>
       </div>
 
-      <h1 className="text-2xl font-bold mb-8">Add Course</h1>
+      <h1 className="text-2xl font-bold mb-8">Add Subject</h1>
 
       <div className="max-w-4xl space-y-8">
         <div className="w-64">
@@ -28,14 +28,14 @@ const AddSubject = () => {
             <button className="flex items-center gap-2 bg-[#222] border border-orange-500/30 text-[#F37021] px-4 py-1.5 rounded-full text-xs font-semibold mb-4 group-hover:bg-[#F37021] group-hover:text-white transition-all">
               Upload File <Upload size={14} />
             </button>
-            <p className="text-sm font-bold text-gray-300 mb-1">Upload Course Logo</p>
+            <p className="text-sm font-bold text-gray-300 mb-1">Upload Subject Logo</p>
             <p className="text-[10px] text-gray-500">Supported formats: JPG, PNG</p>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
           <div className="flex flex-col gap-2">
-            <label className="text-sm font-medium text-gray-400">Course Name</label>
+            <label className="text-sm font-medium text-gray-400">Course Select</label>
             <input
               type="text"
               placeholder="Full Stack Development"
@@ -44,7 +44,7 @@ const AddSubject = () => {
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-sm font-medium text-gray-400">Course Description</label>
+            <label className="text-sm font-medium text-gray-400">Subject Name</label>
             <input
               type="text"
               placeholder="Brief overview of the course"
@@ -52,25 +52,7 @@ const AddSubject = () => {
             />
           </div>
 
-          <div className="flex flex-col gap-2">
-            <label className="text-sm font-medium text-gray-400">Duration</label>
-            <input
-              type="text"
-              placeholder="6 Months"
-              className="bg-transparent border border-gray-800 rounded-xl px-4 py-3 outline-none hover:border-orange-500 transition-all text-gray-200"
-            />
           </div>
-
-          <div className="flex flex-col gap-3">
-            <label className="text-sm font-medium text-gray-400">Status</label>
-            <div
-              onClick={() => setCourseStatus(!courseStatus)}
-              className={`w-12 h-6 rounded-full p-1 cursor-pointer transition-all flex items-center ${courseStatus ? 'bg-[#F37021]' : 'bg-gray-800'}`}
-            >
-              <div className={`w-4 h-4 bg-white rounded-full transition-transform duration-300 shadow-md ${courseStatus ? 'translate-x-6' : 'translate-x-0'}`} />
-            </div>
-          </div>
-        </div>
 
         <div className="flex items-center gap-4 pt-4">
           <button

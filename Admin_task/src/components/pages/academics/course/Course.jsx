@@ -62,12 +62,13 @@ const handleDeleteClick = (course) => {
             Active <ChevronDown size={16} className="text-gray-500" />
           </button>
 
-          <Link to="/add_course">
-            <button className="flex items-center gap-1 bg-[#f97316] hover:bg-orange-600 text-white px-3 py-1.5 rounded-lg font-medium shadow-lg shadow-orange-500/10 active:scale-95 transition-all">
-              <Plus size={20} />
-              Add {activeTab === "Courses" ? "Course" : activeTab.slice(0, -1)}
-            </button>
-          </Link>
+
+          <Link to="/academics/add_course">
+  <button className="flex items-center gap-1 bg-[#f97316] hover:bg-orange-600 text-white px-3 py-1.5 rounded-lg font-medium shadow-lg shadow-orange-500/10 active:scale-95 transition-all">
+    <Plus size={20} />
+    Add Course
+  </button>
+</Link>
         </div>
       </div>
 
