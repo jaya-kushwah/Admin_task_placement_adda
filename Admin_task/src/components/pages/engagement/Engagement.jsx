@@ -17,7 +17,7 @@ const Engagement = () => {
       
       {/* 1. Breadcrumbs */}
       <div className="flex items-center gap-2 text-sm mb-4">
-        <span className="text-gray-500">Engagement</span>
+        <span className="text-white">Engagement</span>
         <span className="text-white text-lg">»</span>
         <span className="text-white font-medium capitalize">
           {activeTab.replace('_', ' ')} Settings

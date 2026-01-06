@@ -20,13 +20,13 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <button 
+          {/* <button 
             onClick={toggleTheme}
             className="p-2 rounded-full bg-gray-100 dark:bg-[#1A1A1A] text-orange-500 dark:text-primary transition-all hover:scale-110 border border-gray-200 dark:border-gray-800"
             aria-label="Toggle Theme"
           >
             {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
-          </button>
+          </button> */}
 
           <button className="p-2 bg-gray-100 dark:bg-[#1A1A1A] rounded-full border border-gray-200 dark:border-gray-800 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors relative">
             <Bell size={20} className="text-gray-600 dark:text-gray-300" />

@@ -10,6 +10,7 @@ const Academics = () => {
     "add_course": { label: "Course", path: "/academics/course" },
     "add_subject": { label: "Subject", path: "/academics/subject" },
     "add_study_material": { label: "Study Materials", path: "/academics/study-materials" },
+    "add_lecture": { label: "Recorded Lectures", path: "/academics/recorded-lectures" },
     "add_job": { label: "Job Alerts", path: "/jobs" },
   };
 
@@ -43,7 +44,7 @@ const Academics = () => {
               {isAddPage && (
                 <>
                      <span className="text-white text-sm">»</span>
-                  <Link to={isAddPage.path} className="text-white hover:text-white capitalize">
+                  <Link to={isAddPage.path} className="text-white hover:text-white capitalize truncate">
                     {isAddPage.label}
                   </Link>
                 </>
@@ -51,7 +52,7 @@ const Academics = () => {
 
              <span className="text-white text-sm">»</span>
               {last ? (
-                <span className="text-white font-medium capitalize">
+                <span className="text-white font-medium capitalize truncate">
                   {value.replace(/_/g, ' ').replace(/-/g, ' ')}
                 </span>
               ) : (
